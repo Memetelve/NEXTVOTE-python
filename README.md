@@ -44,9 +44,9 @@ Prios: #If all lists/lists with role you get in lobby is empty will not pick any
     BanPrio: "90, 1, 34, 31, 3" 
 ```
 
-3. Change only True(to True or False) and gameDirectory to your game directory, it has to be without quotes
-As comments say:
--stopWhenMatchStarts is responsible for quiting script when the game starts
+3. Change only True(to True or False) and gameDirectory to your game directory, it has to be without quotes <br>
+As comments say: <br>
+-stopWhenMatchStarts is responsible for quiting script when the game starts <br>
 -championLock is responsible for picking(True) and not picking(False)
 ```yaml
 Settings:
