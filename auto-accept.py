@@ -23,6 +23,7 @@ from time import sleep
 import os
 import sys
 import psutil
+import confuse
 from colorama import Fore, Back, Style
 
 # Set to your game directory (where LeagueClient.exe is)
@@ -30,65 +31,55 @@ gamedirs = [r'C:\Games\Garena\32787\LeagueClient',
             r'D:\Games\League of Legends',
             r'E:\Riot Games\League of Legends']
 
-# Set to True to auto lock in the champion selection
-championLock = True
 
-# List of the champion ID's you want to play as
-#  order by preference; script tries to pick the first one first
-#  If empty, does not pick champion, just accepts matchmaking
-championsPrio = [
-    8, # Vladimir
-    91, # Talon
-    45, # Veigar
-    777, # Yone
-    99, # Lux
-]
+def Convert(string):
+    string = string.replace(" ", "")
+    string = list(string.split(","))
+    return list(map(int, string))
 
-championsPrioTop = [
-    234, #Viego
-    8, #Vladimir
-    86, #Garen
-    36, #Mundo
-    777, #Yone
-    516, #Ornn
-]
+config = confuse.Configuration('LOLautopicker', __name__)
+config.set_file('config.yaml')
 
-championsPrioBot = [
-    145, #Kaisa
-    202, #Jhin
-    22, #Ashe
-    236, #Lucian
-    15, #Sivir
-]
+PrioTop = config['Prios']['PrioTop'].get()
+PrioTop = Convert(PrioTop)
 
-championsPrioJg = [
-    234, #Viego
-    141, #Kayn
-    121, #Khazix
-    19, #Warwick
-    11, #Master
-    102, #Shyvana
-]
+PrioJg = config['Prios']['PrioJg'].get()
+PrioJg = Convert(PrioJg)
 
-championsPrioSupp = [
-    412, #Thresh
-    555, #Pyke
-    497, #Rakan
-    89, #Leona
-    235, #Senna
-]
+PrioMid = config['Prios']['PrioMid'].get()
+PrioMid = Convert(PrioMid)
+
+PrioAdc = config['Prios']['PrioAdc'].get()
+PrioAdc = Convert(PrioAdc)
+
+PrioSup = config['Prios']['PrioSup'].get()
+PrioSup = Convert(PrioSup)
+
+PrioBan = config['Prios']['BanPrio'].get()
+PrioBan = Convert(PrioBan)
+
+
+stopWhenMatchStarts = config['Settings']['stopWhenMatchStarts'].get()
+
+gameDirectory = config['Settings']['gameDirectory'].get()
+gameDirectory = gameDirectory.replace("\\", "\\")
+gamedirs[0] = f"{gameDirectory}"
+
+championLock = config['Settings']['championLock'].get()
 
 
 
-championsBans = [
-    90, #Malzachar
-    90, #Malzachar
-    1, #Annie
-    34, #Anivia
-]
+championsPrio = PrioMid
 
-# Set to True to stop script when match starts
-stopWhenMatchStarts = True
+championsPrioTop = PrioTop
+
+championsPrioBot = PrioAdc
+
+championsPrioJg = PrioJg
+
+championsPrioSupp = PrioSup
+
+championsBans = PrioBan
 
 ###############################################################################
 champions = {"266":"Aatrox","103":"Ahri","84":"Akali","12":"Alistar","32":"Amumu","34":"Anivia","1":"Annie","523":"Aphelios","22":"Ashe","136":"AurelionSol","268":"Azir","432":"Bard","53":"Blitzcrank","63":"Brand","201":"Braum","51":"Caitlyn","164":"Camille","69":"Cassiopeia","31":"Chogath","42":"Corki","122":"Darius","131":"Diana","119":"Draven","36":"DrMundo","245":"Ekko","60":"Elise","28":"Evelynn","81":"Ezreal","9":"Fiddlesticks","114":"Fiora","105":"Fizz","3":"Galio","41":"Gangplank","86":"Garen","150":"Gnar","79":"Gragas","104":"Graves","120":"Hecarim","74":"Heimerdinger","420":"Illaoi","39":"Irelia","427":"Ivern","40":"Janna","59":"JarvanIV","24":"Jax","126":"Jayce","202":"Jhin","222":"Jinx","145":"Kaisa","429":"Kalista","43":"Karma","30":"Karthus","38":"Kassadin","55":"Katarina","10":"Kayle","141":"Kayn","85":"Kennen","121":"Khazix","203":"Kindred","240":"Kled","96":"KogMaw","7":"Leblanc","64":"LeeSin","89":"Leona","876":"Lillia","127":"Lissandra","236":"Lucian","117":"Lulu","99":"Lux","54":"Malphite","90":"Malzahar","57":"Maokai","11":"MasterYi","21":"MissFortune","62":"MonkeyKing","82":"Mordekaiser","25":"Morgana","267":"Nami","75":"Nasus","111":"Nautilus","518":"Neeko","76":"Nidalee","56":"Nocturne","20":"Nunu","2":"Olaf","61":"Orianna","516":"Ornn","80":"Pantheon","78":"Poppy","555":"Pyke","246":"Qiyana","133":"Quinn","497":"Rakan","33":"Rammus","421":"RekSai","526":"Rell","58":"Renekton","107":"Rengar","92":"Riven","68":"Rumble","13":"Ryze","360":"Samira","113":"Sejuani","235":"Senna","147":"Seraphine","875":"Sett","35":"Shaco","98":"Shen","102":"Shyvana","27":"Singed","14":"Sion","15":"Sivir","72":"Skarner","37":"Sona","16":"Soraka","50":"Swain","517":"Sylas","134":"Syndra","223":"TahmKench","163":"Taliyah","91":"Talon","44":"Taric","17":"Teemo","412":"Thresh","18":"Tristana","48":"Trundle","23":"Tryndamere","4":"TwistedFate","29":"Twitch","77":"Udyr","6":"Urgot","110":"Varus","67":"Vayne","45":"Veigar","161":"Velkoz","254":"Vi","234":"Viego","112":"Viktor","8":"Vladimir","106":"Volibear","19":"Warwick","498":"Xayah","101":"Xerath","5":"XinZhao","157":"Yasuo","777":"Yone","83":"Yorick","350":"Yuumi","154":"Zac","238":"Zed","115":"Ziggs","26":"Zilean","142":"Zoe","143":"Zyra"}
@@ -126,7 +117,7 @@ def request(method, path, query='', data=''):
 
     else:
         url = '%s://%s:%s%s' % (protocol, host, port, path)
-    print('%s %s %s' % (method.upper().ljust(7, ' '), url, data))
+    #print('%s %s %s' % (method.upper().ljust(7, ' '), url, data))
     # print(Back.BLACK + Fore.YELLOW + method.upper().ljust(7, ' ') + Style.RESET_ALL + ' ' + url + ' ' + data)
 
     fn = getattr(s, method)
@@ -273,9 +264,9 @@ while True:
     r = request('get', '/lol-gameflow/v1/gameflow-phase')
 
     if r.status_code != 200:
-        print(Back.BLACK + Fore.RED + str(r.status_code) + Style.RESET_ALL, r.text)
+        #print(Back.BLACK + Fore.RED + str(r.status_code) + Style.RESET_ALL, r.text)
         continue
-    print(Back.BLACK + Fore.GREEN + str(r.status_code) + Style.RESET_ALL, r.text)
+    #print(Back.BLACK + Fore.GREEN + str(r.status_code) + Style.RESET_ALL, r.text)
 
     phase = r.json()
 
@@ -307,9 +298,11 @@ while True:
             pass #/ continue
 
         for actions in cs['actions']:
+            
             championIdx = 0
             championIdx2 = 0
             for action in actions:
+                print(action['type'])
                 
                 if action['type'] == "ban":
                     if action['championId'] == 0:
@@ -330,20 +323,22 @@ while True:
                         # Pick champion
 
                         r = request('patch', url, '', data)
-                        print(r.status_code, r.text)
+                        #print(r.status_code, r.text)
 
                         # Lock champion
                         if championLock and action['completed'] == False:
                             print(f"Trying to ban: {championName}")
                             r = request('post', url+'/complete', '', data)
-                            print(r.status_code, r.text)
+                            #print(r.status_code, r.text)
 
                 if action['actorCellId'] != actorCellId:
                     continue
 
                 try:
                     if action['type'] == "pick":
+                        if action['actorCellId'] == actorCellId and not action['completed']:
                             while True:
+                                print("True")
                                 if role == "middle":
                                     championId = championsPrio[championIdx]
                                     championIdx = championIdx + 1
@@ -372,13 +367,13 @@ while True:
                                 # Pick champion
 
                                 r = request('patch', url, '', data)
-                                print(r.status_code, r.text)
+                                #print(r.status_code, r.text)
 
                                 # Lock champion
                                 if championLock and action['completed'] == False:
                                     try:
                                         r = request('post', url+'/complete', '', data)
-                                        print(r.status_code, r.text)
+                                        #print(r.status_code, r.text)
                                         if str(r.status_code) != "500":
                                             break
                                     except:
