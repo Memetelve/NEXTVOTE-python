@@ -56,5 +56,5 @@ Settings:
 ```
 
 <h3>Addtional files</h3>
-[dict.py](https://github.com/Memetelve/League-of-legends-auto-picker/blob/main/dict.py) is responsible for painless cretion of [championIdsList.txt](https://github.com/Memetelve/League-of-legends-auto-picker/blob/main/championIdsList.txt) and both lists used inside main script
-[test.py](https://github.com/Memetelve/League-of-legends-auto-picker/blob/main/test.py)whatever I'm trying to add rn, and don't want to add to main script yet
+-[dict.py](https://github.com/Memetelve/League-of-legends-auto-picker/blob/main/dict.py) is responsible for painless cretion of [championIdsList.txt](https://github.com/Memetelve/League-of-legends-auto-picker/blob/main/championIdsList.txt) and both lists used inside main script
+-[test.py](https://github.com/Memetelve/League-of-legends-auto-picker/blob/main/test.py)whatever I'm trying to add rn, and don't want to add to main script yet
