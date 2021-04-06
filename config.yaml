@@ -1,0 +1,21 @@
+appName: "lol-auto-picker"
+author: "Memetelve (discord: Memetelve#0001)"
+
+
+Prios: #If all lists/lists with role you get in lobby is empty will not pick anything
+  PrioTop: "234, 8, 86, 36, 777, 516" 
+  PrioJg: "234, 141, 121, 19, 11"
+  PrioMid: "8, 91, 45, 777, 99"
+  PrioAdc: "145, 202, 22, 236, 15"
+  PrioSup: "412, 555, 497, 89, 235"
+
+  BanPrio: "90, 1, 34, 31, 3"
+
+
+Settings:
+  stopWhenMatchStarts: True # Set to True to stop script when match starts
+  championLock: True # Set to True to auto lock in the champion selection
+  gameDirectory: D:\Games\League of Legends # Yes, without qoutes
+
+
+
