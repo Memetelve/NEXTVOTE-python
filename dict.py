@@ -4,6 +4,7 @@ dat = json.loads(xd.read())
 
 dict = ""
 dict_2 = ""
+dict_3 = ""
 
 for champion in dat["data"]:
  
@@ -12,8 +13,9 @@ for champion in dat["data"]:
 
     dict += f"\"{id}\":\"{key}\","
     dict_2 += f"\"{key}\":\"{id}\","
+    dict_3 += f"{key} : {id}\n"
 
 print(dict)
 print("\n\n------------------\n\n")
-print(dict_2)
+print(dict_3)
 
