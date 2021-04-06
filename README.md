@@ -56,7 +56,8 @@ Settings:
 ```
 
 <h3>Legality(?)</h3>
-As far as I'm concerned Riot said that program/script becomes a cheat if it gives you advantage during a match(from the moment you spawn on fountain to ff of destroing blue or red nexus) this piece of software does not integrate into that part of game in no way
+As far as I'm concerned Riot said that program/script becomes a cheat if it gives you advantage during a match(from the moment you spawn on fountain to ff of destroing blue or red nexus) 
+this piece of software does not integrate into that part of game in no way, although i don't take any responsibility
 
 <h3>Addtional files</h3>
 - [dict.py] is responsible for painless cretion of [championIdsList.txt] and both lists used inside main script <br>
