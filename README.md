@@ -29,7 +29,7 @@ appName: "lol-auto-picker"
 author: "Memetelve (discord: Memetelve#0001)"
 ```
 
-2. Those are id's of champions script will try to pick for each line(L -> R order), and id's of champions script'll try to ban(last line)
+2. Those are id's of champions script will try to pick for each line(L -> R order), and id of champion script'll try to ban(last line)
 Ofc PrioTop is for champions you want for TopLane and so on.
 Change only things inside quotation marks ,only ids(numbers) and "," you can use spaces, you don't need to
 List of all champion ids is in [championIdsList.txt](https://github.com/Memetelve/League-of-legends-auto-picker/blob/main/championIdsList.txt)
@@ -43,7 +43,7 @@ Prios: #If all lists/lists with role you get in lobby is empty will not pick any
     PrioAdc: "145, 202, 22, 236, 15"
     PrioSup: "412, 555, 497, 89, 235"
 
-    BanPrio: "90, 1, 34, 31, 3" 
+    BanPrio: "90" 
 ```
 
 3. Change only True(to True or False) and gameDirectory to your game directory, it has to be without quotes <br>
