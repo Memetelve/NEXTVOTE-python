@@ -1,6 +1,7 @@
 <h1>Lol-auto-picker</h1>
 
-<img src="https://img.shields.io/github/v/release/Memetelve/League-of-legends-auto-picker" alt="Build No."> <img src="https://img.shields.io/github/languages/code-size/Memetelve/League-of-legends-auto-picker" alt="Code size"> <img src="https://img.shields.io/github/license/Memetelve/League-of-legends-auto-picker">
+<img src="https://img.shields.io/github/v/release/Memetelve/League-of-legends-auto-picker" alt="Build No."> <img src="https://img.shields.io/github/languages/code-size/Memetelve/League-of-legends-auto-picker" alt="Code size"> <a href="https://discord.gg/EnycrkqzfY"><img src="https://img.shields.io/discord/810503196459008050"></a>
+<img src="https://img.shields.io/github/license/Memetelve/League-of-legends-auto-picker">
 
 <h2>What it can do?</h2>
 <ul>
