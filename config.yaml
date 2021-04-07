@@ -16,6 +16,3 @@ Settings:
   stopWhenMatchStarts: True # Set to True to stop script when match starts
   championLock: True # Set to True to auto lock in the champion selection
   gameDirectory: D:\Games\League of Legends # Yes, without qoutes
-
-
-
