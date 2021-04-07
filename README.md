@@ -1,5 +1,5 @@
 <h1>Lol-auto-picker</h1>
-<br>
+[![Build status][last-commit-ci-image] ][last-commit-ci-url]
 <h2>What it can do?</h2>
 <ul>
     <li>Accept your game, when pop up appears</li>
