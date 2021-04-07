@@ -1,49 +1,36 @@
-import confuse
-
-gamedirs = ["x"]
-
-def Convert(string):
-    string = string.replace(" ", "")
-    return list(string.split(","))
-
-config = confuse.Configuration('LOLautopicker', __name__)
-config.set_file('config.yaml')
-
-PrioTop = config['Prios']['PrioTop'].get()
-PrioTop = Convert(PrioTop)
-
-PrioJg = config['Prios']['PrioJg'].get()
-PrioJg = Convert(PrioJg)
-
-PrioMid = config['Prios']['PrioMid'].get()
-PrioMid = Convert(PrioMid)
-
-PrioAdc = config['Prios']['PrioAdc'].get()
-PrioAdc = Convert(PrioAdc)
-
-PrioSup = config['Prios']['PrioSup'].get()
-PrioSup = Convert(PrioSup)
-
-PrioBan = config['Prios']['BanPrio'].get()
-PrioBan = Convert(PrioBan)
-PrioBan[:] = list(map(int, PrioBan))
-
-stopWhenMatchStarts = config['Settings']['stopWhenMatchStarts'].get()
-
-gameDirectory = config['Settings']['gameDirectory'].get()
-gameDirectory = gameDirectory.replace("\\", "\\")
-gamedirs[0] = f"{gameDirectory}"
-
-championLock = config['Settings']['championLock'].get()
+import kivy
+from kivy.app import App
+from kivy.uix.label import Label
+from kivy.uix.gridlayout import GridLayout
+from kivy.uix.textinput import TextInput
+from kivy.uix.button import Button
 
 
+class SettingsPage(GridLayout):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.cols = 2
+        
+        self.add_widget(Label(text="Champion Id's"))
+        self.champions = TextInput(multiline=False)
+        self.add_widget(self.champions)
 
-print(PrioTop)
-print(PrioJg)
-print(PrioMid)
-print(PrioAdc)
-print(PrioSup)
-print(PrioBan)
+        self.add_widget(Label(text="Stop when game starts"))
+        self.stopWhenMatchStarts = TextInput(multiline=False)
+        self.add_widget(self.stopWhenMatchStarts)
+
+        self.add_widget(Label(text="Lock champion"))
+        self.championLock = TextInput(multiline=False)
+        self.add_widget(self.championLock)
+
+        self.save = Button(text="Save")
+        self.add_widget(Label())
+        self.add_widget(self.save)
 
 
+class NEXTVOTEApp(App):
+    def build(self):
+        return SettingsPage()
 
+if __name__ == '__main__':
+    NEXTVOTEApp().run()
