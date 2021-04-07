@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://i.imgur.com/ISo5yHe.png" height="150">
+<img src="https://i.imgur.com/ISo5yHe.png" height="200">
 </p>
 
 <img src="https://img.shields.io/github/v/release/Memetelve/League-of-legends-auto-picker" alt="Build No."> <img src="https://img.shields.io/github/languages/code-size/Memetelve/League-of-legends-auto-picker" alt="Code size"> <a href="https://discord.gg/EnycrkqzfY"><img src="https://img.shields.io/discord/810503196459008050"></a>
