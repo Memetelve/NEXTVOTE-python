@@ -37,7 +37,7 @@ List of all champion ids is in [championIdsList.txt](https://github.com/Memetelv
 
 For exaple if you get assinged to mid script will try to pick Vladimir->Talon->Veigar->Yone->Lux
 ```yaml
-Prios: #If all lists/lists with role you get in lobby is empty will not pick anything
+Prios: #If all lists/list with role you get in lobby is empty will not pick anything
     PrioTop: "234, 8, 86, 36, 777, 516" 
     PrioJg: "234, 141, 121, 19, 11"
     PrioMid: "8, 91, 45, 777, 99"
