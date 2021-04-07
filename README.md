@@ -1,5 +1,5 @@
 <h1>Lol-auto-picker</h1>
-[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
+https://img.shields.io/github/downloads/Memetelve/League-of-legends-auto-picker/total?style=flat-square
 <h2>What it can do?</h2>
 <ul>
     <li>Accept your game, when pop up appears</li>
