@@ -283,8 +283,6 @@ while True:
     if phase == 'ReadyCheck':
         r = request('post', '/lol-matchmaking/v1/ready-check/accept')  # '/lol-lobby-team-builder/v1/ready-check/accept')
 
-    elif phase == 'ChampSelect' and lastPhase == 'ReadyCheck':
-        time.sleep(25)
 
     # Pick/lock champion
     elif phase == 'ChampSelect':
@@ -308,13 +306,7 @@ while True:
             championIdx = 0
             championIdx2 = 0
             for action in actions:
-                if action['isInProgress'] == "True":
-                    pass
 
-                
-
-                
-                
                 if action['type'] == "ban":
                     if action['isInProgress']:
                         try:

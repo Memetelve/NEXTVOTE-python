@@ -28,7 +28,7 @@ Breaking it down part by part:
 
 1. Don't touch, or touch, delete if this bothers you
 ```yaml
-appName: "lol-auto-picker"
+appName: "NEXTVOTE"
 author: "Memetelve (discord: Memetelve#0001)"
 ```
 
