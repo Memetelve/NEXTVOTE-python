@@ -1,5 +1,5 @@
 <h1>Lol-auto-picker</h1>
-https://img.shields.io/github/downloads/Memetelve/League-of-legends-auto-picker/total?style=flat-square
+
 <h2>What it can do?</h2>
 <ul>
     <li>Accept your game, when pop up appears</li>
