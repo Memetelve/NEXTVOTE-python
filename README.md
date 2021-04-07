@@ -1,5 +1,7 @@
 <h1>Lol-auto-picker</h1>
 
+<img src="https://img.shields.io/github/v/release/Memetelve/League-of-legends-auto-picker" alt="Build No.">
+
 <h2>What it can do?</h2>
 <ul>
     <li>Accept your game, when pop up appears</li>
@@ -27,9 +29,9 @@ appName: "lol-auto-picker"
 author: "Memetelve (discord: Memetelve#0001)"
 ```
 
-2. Those are id's of champions script will try to pick for each line(L -> R order), and id's of champions script'll try to ban(last line) <br>
-Ofc PrioTop is for champions you want for TopLane and so on. <br>
-Change only things inside quotation marks ,only ids(numbers) and "," you can use spaces, you don't need to. <br>
+2. Those are id's of champions script will try to pick for each line(L -> R order), and id's of champions script'll try to ban(last line)
+Ofc PrioTop is for champions you want for TopLane and so on.
+Change only things inside quotation marks ,only ids(numbers) and "," you can use spaces, you don't need to
 List of all champion ids is in [championIdsList.txt](https://github.com/Memetelve/League-of-legends-auto-picker/blob/main/championIdsList.txt)
 
 For exaple if you get assinged to mid script will try to pick Vladimir->Talon->Veigar->Yone->Lux
@@ -44,7 +46,7 @@ Prios: #If all lists/lists with role you get in lobby is empty will not pick any
     BanPrio: "90, 1, 34, 31, 3" 
 ```
 
-3. Change only True(to True or False) and "D:\Games\League of Legends" to your game directory, it has to be without quotes <br>
+3. Change only True(to True or False) and gameDirectory to your game directory, it has to be without quotes <br>
 As comments say: <br>
 -stopWhenMatchStarts is responsible for quiting script when the game starts <br>
 -championLock is responsible for picking(True) and not picking(False)
@@ -56,8 +58,8 @@ Settings:
 ```
 
 <h3>Legality(?)</h3>
-As far as I'm concerned Riot said that program/script becomes a cheat if it gives you advantage during a match(from the moment you spawn on fountain to ff of destroing blue or red nexus).
-This piece of software does not integrate into that part of game in no way, although i don't take any responsibility
+As far as I'm concerned Riot said that program/script becomes a cheat if it gives you advantage during a match(from the moment you spawn on fountain to ff of destroing blue or red nexus) 
+this piece of software does not integrate into that part of game in no way, although i don't take any responsibility
 
 <h3>Addtional files</h3>
 - [dict.py] is responsible for painless cretion of [championIdsList.txt] and both lists used inside main script <br>
