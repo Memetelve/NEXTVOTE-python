@@ -66,4 +66,4 @@ this piece of software does not integrate into that part of game in no way, alth
 
 <h3>Addtional files</h3>
 - [dict.py] is responsible for painless cretion of [championIdsList.txt] and both lists used inside main script <br>
-- [test.py]whatever I'm trying to add rn, and don't want to add to main script yet
+- [test.py] whatever I'm trying to add rn, and don't want to add to main script yet
