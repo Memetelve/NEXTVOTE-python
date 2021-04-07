@@ -25,11 +25,14 @@ import sys
 import psutil
 import confuse
 from colorama import Fore, Back, Style
+import time
 
 # Set to your game directory (where LeagueClient.exe is)
 gamedirs = [r'C:\Games\Garena\32787\LeagueClient',
             r'D:\Games\League of Legends',
             r'E:\Riot Games\League of Legends']
+
+lastPhase = "None"
 
 
 def Convert(string):
@@ -280,6 +283,9 @@ while True:
     if phase == 'ReadyCheck':
         r = request('post', '/lol-matchmaking/v1/ready-check/accept')  # '/lol-lobby-team-builder/v1/ready-check/accept')
 
+    elif phase == 'ChampSelect' and lastPhase == 'ReadyCheck':
+        time.sleep(25)
+
     # Pick/lock champion
     elif phase == 'ChampSelect':
         r = request('get', '/lol-champ-select/v1/session')
@@ -302,10 +308,15 @@ while True:
             championIdx = 0
             championIdx2 = 0
             for action in actions:
-                print(action['type'])
+                if action['isInProgress'] == "True":
+                    pass
+
+                
+
+                
                 
                 if action['type'] == "ban":
-                    if action['championId'] == 0:
+                    if action['isInProgress']:
                         try:
                             championId = championsBans[championIdx2]
                         except IndexError:
@@ -338,7 +349,6 @@ while True:
                     if action['type'] == "pick":
                         if action['actorCellId'] == actorCellId and not action['completed']:
                             while True:
-                                print("True")
                                 if role == "middle":
                                     championId = championsPrio[championIdx]
                                     championIdx = championIdx + 1
@@ -406,5 +416,10 @@ while True:
 
     elif phase == 'Matchmaking' or phase == 'Lobby' or phase == 'None':
         setPriority = False
+
+    try:
+        lastPhase = phase
+    except:
+        pass
 
     sleep(4)
