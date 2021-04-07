@@ -1,4 +1,6 @@
-<img src="https://i.imgur.com/PlezRbl.png">
+<p align="center">
+<img src="https://i.imgur.com/I0NVg8h.png">
+</p>
 
 <img src="https://img.shields.io/github/v/release/Memetelve/League-of-legends-auto-picker" alt="Build No."> <img src="https://img.shields.io/github/languages/code-size/Memetelve/League-of-legends-auto-picker" alt="Code size"> <a href="https://discord.gg/EnycrkqzfY"><img src="https://img.shields.io/discord/810503196459008050"></a>
 <img src="https://img.shields.io/github/license/Memetelve/League-of-legends-auto-picker">
