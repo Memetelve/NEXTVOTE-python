@@ -26,18 +26,20 @@ Credit for base code goes to: [Asbra](https://gist.github.com/Asbra "His\Her git
 In the files there is a file called "config.yaml", there is stored everything, although you can change the settings directly in app, not via editing this file </br>
 
 <h3>In app</h3>
--Champion id's for top: id's of champions script will try to pick if you get assigned top
-Exactly the same for 4 next lines and lanes
+-Champion id's for top: id's of champions script will try to pick if you get assigned top </br>
+Exactly the same for 4 next lines and lanes </br>
 
--Champion id to ban: id of champion that you want banned
--Game directory: place where your LeagueClient.exe is
--Stop when game starts: If keep the script running when you load into game(do you want to press start berofe next game or not)
--Lock champion: If False only accepts matchmaking
+-Champion id to ban: id of champion that you want banned </br>
+-Game directory: place where your LeagueClient.exe is </br>
+-Stop when game starts: If keep the script running when you load into game(do you want to press start berofe next game or not) </br>
+-Lock champion: If False only accepts matchmaking </br>
 
 
 <h3>In config.yaml</h3>
 Breaking it down part by part:
-1. Don't touch, or touch, delete if this bothers you
+1. Don't touch, or touch, delete if this bothers you 
+</br>
+
 ```yaml
 appName: "NEXTVOTE"
 author: "Memetelve (discord: Memetelve#0001)"
