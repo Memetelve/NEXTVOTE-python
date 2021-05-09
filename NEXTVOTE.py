@@ -509,7 +509,6 @@ class SettingsPage(GridLayout):
 class NEXTVOTEApp(App):
     def build(self):
         Window.clearcolor = (0.129411764, 0.129411764, 0.129411764, 1)
-        self.icon = 'NV_icon.jpg'
         return SettingsPage()
 
 if __name__ == '__main__':
