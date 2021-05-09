@@ -417,7 +417,7 @@ class SettingsPage(GridLayout):
         self.add_widget(self.stopWhenMatchStarts)
 
         self.add_widget(Label(text="Lock champion (True/False)"))
-        self.championLock = TextInput(multiline=False, text=championLock, font_size="20")
+        self.championLock = TextInput(multiline=False, text=championLock)
         self.add_widget(self.championLock)
 
 
