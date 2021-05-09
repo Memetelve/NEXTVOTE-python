@@ -8,6 +8,6 @@ Prios:
 Settings:
   championLock: 'True'
   gameDirectory: D:\Games\League of Legends
-  stopWhenMatchStarts: 'True'
+  stopWhenMatchStarts: 'False'
 appName: NEXTVOTE
 author: 'Memetelve (discord: Memetelve#0001)'
