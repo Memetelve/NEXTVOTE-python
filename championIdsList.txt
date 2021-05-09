@@ -35,6 +35,7 @@
 150 : Gnar
 79 : Gragas
 104 : Graves
+887 : Gwen
 120 : Hecarim
 74 : Heimerdinger
 420 : Illaoi

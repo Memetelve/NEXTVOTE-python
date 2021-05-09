@@ -1,5 +1,5 @@
 import urllib.request, json 
-xd = urllib.request.urlopen("https://ddragon.leagueoflegends.com/cdn/11.7.1/data/en_US/champion.json")
+xd = urllib.request.urlopen("https://ddragon.leagueoflegends.com/cdn/11.9.1/data/en_US/champion.json")
 dat = json.loads(xd.read())
 
 dict = ""
@@ -16,6 +16,8 @@ for champion in dat["data"]:
     dict_3 += f"{key} : {id}\n"
 
 print(dict)
+print("\n\n------------------\n\n")
+print(dict_2)
 print("\n\n------------------\n\n")
 print(dict_3)
 
