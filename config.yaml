@@ -4,7 +4,7 @@ Prios:
   PrioJg: 234, 141, 121, 19
   PrioMid: 8, 91, 45, 777, 99
   PrioSup: 412, 555, 497, 89, 235
-  PrioTop: 234, 8, 86, 36, 777, 516
+  PrioTop: 8, 234, 86, 36, 777, 516
 Settings:
   championLock: 'True'
   gameDirectory: D:\Games\League of Legends
