@@ -342,7 +342,7 @@ def main(stop):
                 sleep(9)
         elif phase == 'Matchmaking' or phase == 'Lobby' or phase == 'None':
             setPriority = False
-        sleep(4)
+        sleep(0.5)
 
 gamedirs = [r'C:\Games\Garena\32787\LeagueClient',
             r'D:\Games\League of Legends',
