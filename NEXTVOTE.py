@@ -184,6 +184,12 @@ def main(stop):
             break
         else:
             pass
+    '''   
+    with open("json.txt", "w") as f:
+        f.write(str(r.json()))
+        print("done")
+        exit()
+    '''
     summonerId = r.json()['summonerId']
     ###
     # Get available champions

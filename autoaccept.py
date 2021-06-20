@@ -117,22 +117,23 @@ def main():
     def request(method, path, query='', data=''):
         if query:
             url = '%s://%s:%s%s?%s' % (protocol, host, port, path, query)
-
+            
         else:
             url = '%s://%s:%s%s' % (protocol, host, port, path)
         #print('%s %s %s' % (method.upper().ljust(7, ' '), url, data))
         # print(Back.BLACK + Fore.YELLOW + method.upper().ljust(7, ' ') + Style.RESET_ALL + ' ' + url + ' ' + data)
+
+        print(url)
 
         fn = getattr(s, method)
 
         if data:
             return fn(url, verify=False, headers=headers, json=data)
 
-        else:
-            try:
-                return fn(url, verify=False, headers=headers)
-            except:
-                return 0
+        try:
+            return fn(url, verify=False, headers=headers)
+        except:
+            return 0
 
     ###
     # Read the lock file to retrieve LCU API credentials
