@@ -6,6 +6,7 @@ Prios:
   PrioSup: 412, 555, 497, 89, 235
   PrioTop: 8, 234, 86, 36, 777, 516
 Settings:
+  allowedInvites: 'hansbudyń, tortas23, gosiaes'
   championLock: 'True'
   gameDirectory: D:\Games\League of Legends
   stopWhenMatchStarts: 'False'
