@@ -11,6 +11,8 @@
     <li>Showcase the first champion from your list of picks</li>
     <li>Ban champion(s) of your preference</li>
     <li>Pick/show champion of your preference - and suitable for the posiotion you've got</li>
+    <li>Accept invites from selected friends</li>
+    <li>Set preferred postions after joining lobby</li>
 </ul>
 
 <h2>What it can't do?</h2>
