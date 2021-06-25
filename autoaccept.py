@@ -280,6 +280,35 @@ def main():
         if championIdx2 != 0 and phase != 'ChampSelect':
             championIdx2 = 0
 
+        if phase in [None, "Lobby"]:
+            try:
+                invitations = request('get', '/lol-lobby/v2/received-invitations').json()
+            except Exception as e:
+                print(e)
+                invitations = None
+            if invitations:
+                for inv in invitations:
+                    invitationId = inv['invitationId']
+                    summoner_name = inv['fromSummonerName'].lower()
+                    
+                    if summoner_name in ["hansbudyń", "tortas23", "gosiaes"]:
+                        request('post', f'/lol-lobby/v2/received-invitations/{invitationId}/accept')
+                        
+                        positions = '{"firstPreference": "MIDDLE", "secondPreference": "TOP"}'
+                        positions = json.loads(positions)
+                        
+                        time.sleep(2)
+                        
+                        if request('get', '/lol-gameflow/v1/gameflow-phase').json() == "Lobby":
+
+                            request('put', f'/lol-lobby/v1/lobby/members/localMember/position-preferences', data=positions)
+                    else:
+                        continue
+        
+
+
+                
+
         # Auto accept match
         if phase == 'ReadyCheck':
             r = request('post', '/lol-matchmaking/v1/ready-check/accept')  # '/lol-lobby-team-builder/v1/ready-check/accept')
@@ -403,7 +432,7 @@ def main():
                 setPriority = True
 
             if stopWhenMatchStarts:
-                break
+                exit(0)
             else:
                 sleep(9)
 

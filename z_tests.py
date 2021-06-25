@@ -6,6 +6,7 @@ from base64 import b64encode
 from time import sleep
 import os
 from colorama import Fore, Back, Style
+import json
 
 urllib3.disable_warnings()
 
@@ -66,10 +67,22 @@ try:
 except Exception as e:
     print(e)
     invitations = None
-print(invitations)
 
 if invitations:
-    invitationId = invitations[0]['invitationId']
+    for inv in invitations:
+        invitationId = inv['invitationId']
+        summoner_name = inv['fromSummonerName'].lower()
+        
+        if summoner_name in ["hansbudyń", "tortas23", "gosiaes"]:
+            request('post', f'/lol-lobby/v2/received-invitations/{invitationId}/accept')
+        else:
+            continue
+        
 
-#request('post', f'/lol-lobby/v2/received-invitations/{invitationId}/accept')
 
+positions = '{"firstPreference": "MIDDLE", "secondPreference": "TOP"}'
+positions = json.loads(positions)
+
+request('put', f'/lol-lobby/v1/lobby/members/localMember/position-preferences', data=positions)
+
+print(request('get', '/lol-gameflow/v1/gameflow-phase').json())
